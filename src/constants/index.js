@@ -8,14 +8,11 @@ import {
     html,
     css,
     reactjs,
-    redux,
     tailwind,
     nodejs,
     mongodb,
     git,
     figma,
-    docker,
-    meta,
     starbucks,
     tesla,
     shopify,
@@ -24,6 +21,7 @@ import {
     tripguide,
     threejs,
   } from "../assets";
+  import dra from '../assets/dra.png'
   
   export const navLinks = [
     {
@@ -42,19 +40,19 @@ import {
   
   const services = [
     {
-      title: "Web Developer",
+      title: "Web Dev",
       icon: web,
     },
     {
-      title: "React Native Developer",
+      title: "React Native Dev",
       icon: mobile,
     },
     {
-      title: "Backend Developer",
+      title: "Backend Dev",
       icon: backend,
     },
     {
-      title: "Content Creator",
+      title: "Criador de Conteúdo",
       icon: creator,
     },
   ];
@@ -81,10 +79,6 @@ import {
       icon: reactjs,
     },
     {
-      name: "Redux Toolkit",
-      icon: redux,
-    },
-    {
       name: "Tailwind CSS",
       icon: tailwind,
     },
@@ -108,63 +102,46 @@ import {
       name: "figma",
       icon: figma,
     },
-    {
-      name: "docker",
-      icon: docker,
-    },
   ];
   
   const experiences = [
     {
-      title: "React.js Developer",
-      company_name: "Starbucks",
+      title: "React.js Dev",
+      company_name: "Ministério da Educação",
       icon: starbucks,
       iconBg: "#383E56",
-      date: "March 2020 - April 2021",
+      date: "Novembro 2023 - 2024",
       points: [
-        "Developing and maintaining web applications using React.js and other related technologies.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
+        "Desenvolvimento e manutenção de aplicações web usando React.js e outras tecnologias relacionadas.",
+        "Collaborate with cross-functional teams, including designers, product managers, and teachers, to create high-quality products.",
+        "Implementar design responsivo e garantir compatibilidade entre navegadores.",
+        "Participar de revisões de código e fornecer feedback construtivo a outros desenvolvedores.",
       ],
     },
     {
-      title: "React Native Developer",
-      company_name: "Tesla",
+      title: "Web Dev",
+      company_name: "Freelancer",
       icon: tesla,
       iconBg: "#E6DEDD",
-      date: "Jan 2021 - Feb 2022",
+      date: "2022 - ...",
       points: [
-        "Developing and maintaining web applications using React.js and other related technologies.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
+        "Criação de conteúdo escrito, como artigos, blogs e posts em redes sociais, adaptado às necessidades do cliente e ao público-alvo.",
+        "Realizar pesquisas de mercado e analisar dados para identificar tendências e oportunidades de crescimento para o negócio.",
+        "Gerenciar campanhas de marketing digital, incluindo SEO, SEM, e-mail marketing e gestão de redes sociais, para aumentar a visibilidade online.",
+        "Gerenciar campanhas de marketing digital, incluindo SEO, SEM, e-mail marketing e gestão de redes sociais, para aumentar a visibilidade online.",
       ],
     },
     {
-      title: "Web Developer",
-      company_name: "Shopify",
+      title: "Designer",
+      company_name: "Lavousier Comercial",
       icon: shopify,
       iconBg: "#383E56",
-      date: "Jan 2022 - Jan 2023",
+      date: "2022 - 2023",
       points: [
-        "Developing and maintaining web applications using React.js and other related technologies.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
-      ],
-    },
-    {
-      title: "Full stack Developer",
-      company_name: "Meta",
-      icon: meta,
-      iconBg: "#E6DEDD",
-      date: "Jan 2023 - Present",
-      points: [
-        "Developing and maintaining web applications using React.js and other related technologies.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
+        "Desenvolver identidades visuais, incluindo logotipos, paletas de cores e tipografias, para garantir uma comunicação visual coerente da marca.",
+        "Criar layouts atraentes e funcionais para websites, aplicativos móveis e outras plataformas digitais, utilizando ferramentas como Adobe XD, Sketch ou Figma.",
+        "Elaborar materiais gráficos impressos, como cartões de visita, panfletos e banners, garantindo alta qualidade de impressão e impacto visual.",
+        "Colaborar com equipes de marketing e desenvolvimento para garantir que o design atenda aos objetivos do projeto e às necessidades do usuário.",
       ],
     },
   ];
@@ -172,19 +149,19 @@ import {
   const testimonials = [
     {
       testimonial:
-        "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-      name: "Sara Lee",
-      designation: "CFO",
-      company: "Acme Co",
-      image: "https://randomuser.me/api/portraits/women/4.jpg",
+        "Achei que era impossível fazer um site tão bonito quanto o nosso produto, mas o Johnny provou que eu estava errado.",
+      name: "Dra. Paula Henriques",
+      designation: "Diretora",
+      company: "da CNIILP-Angola",
+      image: dra,
     },
     {
       testimonial:
-        "I've never met a web developer who truly cares about their clients' success like Rick does.",
-      name: "Chris Brown",
-      designation: "COO",
-      company: "DEF Corp",
-      image: "https://randomuser.me/api/portraits/men/5.jpg",
+        "Estudou no IPIL e se tornou num grande desenvolvedor, meus parábens",
+      name: "Edson Viegas",
+      designation: "Sub - Diretor",
+      company: "do IPIL",
+      image: "",
     },
     {
       testimonial:
@@ -240,16 +217,16 @@ import {
       source_code_link: "https://github.com/",
     },
     {
-      name: "Trip Guide",
+      name: "CNIILP Angola",
       description:
         "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
       tags: [
         {
-          name: "nextjs",
+          name: "reactjs",
           color: "blue-text-gradient",
         },
         {
-          name: "supabase",
+          name: "mongodb",
           color: "green-text-gradient",
         },
         {
@@ -258,7 +235,7 @@ import {
         },
       ],
       image: tripguide,
-      source_code_link: "https://github.com/",
+      source_code_link: "https://cniilp-ao-client.vercel.app/",
     },
   ];
   

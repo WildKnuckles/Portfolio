@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { styles } from '../styles';
-import emailjs from '@emailjs/browser'; // Modificado para 'emailjs-com' devido à mudança de nome
+import emailjs from '@emailjs/browser'; 
 import { EarthCanvas } from './canvas';
 import { SectionWrapper } from '../hoc';
 import { slideIn } from '../utils/motion';
@@ -18,21 +18,31 @@ const Contact = () => {
   });
   const [loading, setLoading] = useState(false);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setForm({ ...form, [name]: value });
-  };
+  const valorInput = e => setForm({ ...form, [e.target.name]: e.target.value });
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await axios.post('/send-email', form);
-      console.log(response.data);
-      // Faça algo com a resposta, se necessário
-    } catch (error) {
-      console.error('Erro ao enviar e-mail:', error);
-    }
-  };
+ 
+  const handleSubmit = (e) => {
+      e.preventDefault();
+      setLoading(true);
+
+      const TemplateParams = {
+        from_name: form.name,
+        from_email: form.email,
+        message: form.message,
+    };
+
+    emailjs.send("service_al6mugk", "template_6j334tm", TemplateParams, "NYaf02NB_qmcOyEcC").then((response) => {
+      alert("Inscrição enviado com sucesso. Confirme o downloand da sua ficha", response.status, response.text);
+      setForm({
+        name: '',
+        email: '',
+        message: ''
+    });
+    }, (err) => {
+      console.log("Erro: ", err);
+  });
+  }
+  
 
   return (
     <div className='xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden'>
@@ -42,35 +52,57 @@ const Contact = () => {
         <form ref={formRef} onSubmit={handleSubmit} className='mt-12 flex flex-col gap-8'>
           <label className='flex flex-col'>
           <span className='text-white font-medium mb-4 flex items-center'>
-          <box-icon name='whatsapp' type='logo' animation='flashing' color='#288531' size='50px'></box-icon>
-        <a className='text-secondary text-bold text-[14px] ml-2' href='https://wa.me/944072491'>944072491</a>
+          Seu Nome
           </span>
+          <input type="text"
+          name="name"
+          value={form.name}
+          onChange={valorInput}
+          placeholder='Qual é o seu nome?'
+          className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
+          />
           </label>
+
+          
+          <label className='flex flex-col'>
+          <span className='text-white font-medium mb-4 flex items-center'>
+          Seu Email
+          </span>
+          <input type="email"
+          name="email"
+          value={form.email}
+          onChange={valorInput}
+          placeholder='Qual é o seu email?'
+          className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
+          />
+          </label>
+
 
           <label className='flex flex-col'>
           <span className='text-white font-medium mb-4 flex items-center'>
-          <box-icon name='instagram' type='logo' animation='spin' color='#C13584' size='50px'></box-icon>
-        <a className='text-secondary text-bold text-[14px] ml-2' href='https://www.instagram.com/johnnycardoso_wk/'>@johnnycardoso_wk</a>
+          Assunto
           </span>
+          <textarea
+          rows='7'
+          name="message"
+          value={form.message}
+          onChange={valorInput}
+          placeholder='O que queres dizer?'
+          className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
+          />
           </label>
+          
 
-          <label className='flex flex-col'>
-          <span className='text-white font-medium mb-4 flex items-center'>
-          <box-icon name='google' type='logo' animation='tada' color='#405DE6' size='50px'></box-icon>
-        <a className='text-secondary text-bold text-[14px] ml-2' href='https://www.jonataosacapia@gmail.com'>jonataosacapia@gmail</a>
-          </span>
-          </label>
 
-          <label className='flex flex-col'>
-          <span className='text-white font-medium mb-4 flex items-center'>
-        <a className='text-secondary text-bold text-[14px] ml-2' href='#'>"Olá! Fico feliz em saber que você quer entrar em contato comigo. Estou ansioso para ouvir suas perguntas, comentários ou ideias. Sinta-se à vontade para me enviar uma mensagem a qualquer momento. Estou aqui para ajudar e responder a todas as suas dúvidas da melhor maneira possível. Vamos conversar e colaborar juntos!"</a>
-          </span>
-          </label>
+          <button type='submit'
+          className='bg-tertiary py-3 px-8 outline-none w-fit text-white font-bold shadow-md shadow-primary rounded-xl'>
+            {loading ? 'A Enviar' : 'Enviar'}
+          </button>
 
         </form>
       </motion.div>
 
-      <motion.div variants={slideIn('right', 'tween', 0.2, 1)} className='xl:flex-1 xl:h-auto md:h-[550px] h-[350]:'>
+      <motion.div variants={slideIn('right', 'tween', 0.2, 1)} className='xl:flex-1 xl:h-auto md:h-[550px] h-[350px]'>
         <EarthCanvas />
       </motion.div>
     </div>

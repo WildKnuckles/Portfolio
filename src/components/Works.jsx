@@ -8,21 +8,24 @@ import { fadeIn, textVariant } from "../utils/motion"
 
 const ProjectCard = ({index, name, description, tags, image, source_code_link}) => {
   return (
-  <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
+  <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}
+  onClick={() => window.open (source_code_link, "_blank")}
+  style={{cursor: 'pointer'}}>
     <Tilt
     options={{
       max: 45,
       scale: 1,
       speed: 450
     }}
-    className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full">
-      <div className="relative w-full h-[230px]">
+    className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full"
+    >
+      <div className="relative">
         <img src={image} alt={name}
         className="w-full h-full object-cover rounded-2xl" />
 
         <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
           <div 
-          onClick={() => window.open (source_code_link, "_blank")}
+          
           className="black-gradient w-10 h-10 justify-center flex rounded-full items-center cursor-pointer"
           >
             <img src={github} alt="github"
