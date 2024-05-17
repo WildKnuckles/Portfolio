@@ -40,7 +40,7 @@ const About = () => {
     <motion.p variants={fadeIn('', '', 0.1, 1)}
     className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
     >
-      Eu sou um habilidoso desenvolvedor de Software com experiência em TypeScript e JavaScript, e especialização em frameworks como React, Node.js, Three.js e base de dados MySQL e Mongo DB. Eu aprendo rápido e colaborarei estreitamente com os clientes para criar soluções eficientes, escaláveis, e soluções fáceis de usar que resolvem problemas do mundo real. Vamos trablhar juntos e dar vida às nossas ideias!
+      Eu sou um habilidoso desenvolvedor de Software com experiência em TypeScript e JavaScript, e especialização em frameworks como React, Node.js, Three.js e base de dados MySQL e Mongo DB. Fluente em Português, Intermédio em Espanhol, Intermédio B1/B2 em Inglês. Eu aprendo rápido e colaborarei estreitamente com os clientes para criar soluções eficientes, escaláveis, e soluções fáceis de usar que resolvem problemas do mundo real. Vamos trablhar juntos e dar vida às nossas ideias!
     </motion.p>
     <div className='mt-20 flex flex-wrap gap-10'>
       {services.map((service, index) => (
