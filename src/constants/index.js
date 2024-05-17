@@ -169,7 +169,7 @@ import {
       name: "António Cardoso",
       designation: "Meu",
       company: "Querido Pai",
-      image: "https://randomuser.me/api/portraits/women/6.jpg",
+      image: "",
     },
   ];
   
