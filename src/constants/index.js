@@ -175,46 +175,31 @@ import {
   
   const projects = [
     {
-      name: "Car Rent",
+      name: "E-Commerce Website",
       description:
-        "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+        "Protótipo de website e-commerce com design intuitivo, funcionalidades essenciais, e testes contínuos para otimizar a experiência do usuário",
       tags: [
         {
-          name: "react",
-          color: "blue-text-gradient",
-        },
-        {
-          name: "mongodb",
-          color: "green-text-gradient",
-        },
-        {
-          name: "tailwind",
+          name: "figma",
           color: "pink-text-gradient",
         },
       ],
       image: carrent,
-      source_code_link: "https://github.com/",
+      source_code_link: "https://www.figma.com/design/bWyB2bRxsZC8pfy24IXvJo/Shopping-Website-(Community)?node-id=2-427&t=774mbIvLO4VDvWkw-0",
     },
     {
-      name: "Job IT",
+      name: "ZenitGPT Chat",
       description:
-        "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+        "Protótipo de um live chat projectado para facilitar a conversação entre os usuários. Chatbots automatizam interações, fornecendo respostas instantâneas e personalizadas, melhorando o atendimento ao cliente e aumentando a eficiência operacional das empresas.",
       tags: [
+       
         {
-          name: "react",
-          color: "blue-text-gradient",
-        },
-        {
-          name: "restapi",
-          color: "green-text-gradient",
-        },
-        {
-          name: "scss",
+          name: "figma",
           color: "pink-text-gradient",
         },
       ],
       image: jobit,
-      source_code_link: "https://github.com/",
+      source_code_link: "https://www.figma.com/design/vaEHl6mvetwD1i4JXv97ub/Live-Chat-%2F-AI-Chatbot-Component-for-website-prototypes-(Community)?node-id=234-6572&t=rW3XMDA71wx32VPy-0",
     },
     {
       name: "CNIILP Angola",

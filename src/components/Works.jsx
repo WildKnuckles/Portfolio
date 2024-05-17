@@ -24,13 +24,7 @@ const ProjectCard = ({index, name, description, tags, image, source_code_link}) 
         className="w-full h-full object-cover rounded-2xl" />
 
         <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
-          <div 
           
-          className="black-gradient w-10 h-10 justify-center flex rounded-full items-center cursor-pointer"
-          >
-            <img src={github} alt="github"
-            className="w-1/2 h-1/2 object-contain" />
-          </div>
         </div>
       </div>
 
