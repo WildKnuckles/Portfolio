@@ -32,7 +32,7 @@ const Contact = () => {
     };
 
     emailjs.send("service_al6mugk", "template_6j334tm", TemplateParams, "NYaf02NB_qmcOyEcC").then((response) => {
-      alert("Inscrição enviado com sucesso. Confirme o downloand da sua ficha", response.status, response.text);
+      alert("Email enviado. Aguarde o meu retorno", response.status, response.text);
       setForm({
         name: '',
         email: '',
