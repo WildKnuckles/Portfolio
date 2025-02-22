@@ -21,6 +21,7 @@ import {
     tripguide,
     threejs,
   } from "../assets";
+  import landing from '../assets/landing.png'
   import dra from '../assets/dra.png'
   
   export const navLinks = [
@@ -40,19 +41,19 @@ import {
   
   const services = [
     {
-      title: "Web Dev",
+      title: "Frontend Dev",
       icon: web,
     },
     {
-      title: "React Native Dev",
+      title: "Reactjs Dev",
       icon: mobile,
     },
     {
-      title: "Backend Dev",
+      title: "Electron Dev",
       icon: backend,
     },
     {
-      title: "Criador de Conteúdo",
+      title: "Nextjs",
       icon: creator,
     },
   ];
@@ -119,7 +120,7 @@ import {
       ],
     },
     {
-      title: "Web Dev",
+      title: "Web Dev Reactjs",
       company_name: "Freelancer",
       icon: tesla,
       iconBg: "#E6DEDD",
@@ -132,16 +133,16 @@ import {
       ],
     },
     {
-      title: "Designer",
-      company_name: "Lavousier Comercial",
-      icon: shopify,
+      title: "Frontend Dev",
+      company_name: "Data Cloud - Contabilidade digital",
+      icon: nodejs,
       iconBg: "#383E56",
-      date: "2022 - 2023",
+      date: "2022 - ...",
       points: [
-        "Desenvolver identidades visuais, incluindo logotipos, paletas de cores e tipografias, para garantir uma comunicação visual coerente da marca.",
-        "Criar layouts atraentes e funcionais para websites, aplicativos móveis e outras plataformas digitais, utilizando ferramentas como Adobe XD, Sketch ou Figma.",
-        "Elaborar materiais gráficos impressos, como cartões de visita, panfletos e banners, garantindo alta qualidade de impressão e impacto visual.",
-        "Colaborar com equipes de marketing e desenvolvimento para garantir que o design atenda aos objetivos do projeto e às necessidades do usuário.",
+        "Desenvolver softwares Saas, Landing Pages, com paletas de cores padronizadas, telas pixel perfect, design responsivo, para garantir uma comunicação visual coerente do Software.",
+        "Criar layouts atraentes e funcionais para websites, aplicativos móveis e outras plataformas digitais, utilizando ferramentas como Webflow, Sketch ou Figma.",
+        "Elaborar componentes UI reutilizáveis, como headers, hero, forms, footers, etc. Garantindo alta qualidade no Software e impacto visual.",
+        "Colaborar com equipes de marketing, UI/UX e desenvolvimento Backend para garantir que o Software atenda aos objetivos do projeto e às necessidades do usuário.",
       ],
     },
   ];
@@ -175,9 +176,9 @@ import {
   
   const projects = [
     {
-      name: "E-Commerce Website",
+      name: "Gerador de relatórios",
       description:
-        "Protótipo de website e-commerce com design intuitivo, funcionalidades essenciais, e testes contínuos para otimizar a experiência do usuário",
+        "Documente as reuniões de forma mais fácil utilizando o gerador de relatórios em pdf, entre em contacto comigo para customizá-lo",
       tags: [
         {
           name: "figma",
@@ -185,7 +186,7 @@ import {
         },
       ],
       image: carrent,
-      source_code_link: "https://www.figma.com/design/bWyB2bRxsZC8pfy24IXvJo/Shopping-Website-(Community)?node-id=2-427&t=774mbIvLO4VDvWkw-0",
+      source_code_link: "https://pdf-gen-rosy.vercel.app",
     },
     {
       name: "ZenitGPT Chat",
@@ -204,7 +205,7 @@ import {
     {
       name: "CNIILP Angola",
       description:
-        "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+        "Uma página para a Comissão Nacional do Instituto Internacional da Língua Portuguesa",
       tags: [
         {
           name: "reactjs",
@@ -215,11 +216,32 @@ import {
           color: "green-text-gradient",
         },
         {
-          name: "css",
+          name: "tailwind",
           color: "pink-text-gradient",
         },
       ],
       image: tripguide,
+      source_code_link: "https://cniilp-ao-client.vercel.app/",
+    },
+    {
+      name: "IITECH Landing Page",
+      description:
+        "Página de apresentação dos serviços personalizados de uma startup angolana.",
+      tags: [
+        {
+          name: "reactjs",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "tailwind",
+          color: "green-text-gradient",
+        },
+        {
+          name: "mobile",
+          color: "pink-text-gradient",
+        },
+      ],
+      image: landing,
       source_code_link: "https://cniilp-ao-client.vercel.app/",
     },
   ];
