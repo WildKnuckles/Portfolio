@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react'
 import { IconBrandLinkedin, IconBrandGithub, IconBrandInstagram, IconBrandGoogle} from '@tabler/icons-react';
 import Link from 'next/link';
+import { BackgroundBeams } from "@/components/ui/background-beams";
 import { motion } from "framer-motion";
 import { IconArrowDown } from "@tabler/icons-react";
 import { Badge } from "@/components/ui/badge"
@@ -27,11 +28,10 @@ const Hero = () => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen antialiased">
-        <Avatar>
+        <Avatar className='mb-2'>
       <AvatarImage src={avatar.src} alt="@shadcn" />
       <AvatarFallback>CN</AvatarFallback>
     </Avatar>
-    <br />
       <Badge variant="outline">Welcome</Badge>
       <div className="max-w-2xl mx-auto p-4">
         <motion.h1 
@@ -75,6 +75,7 @@ const Hero = () => {
         <IconArrowDown size={20} />
         </Link>
       </motion.button>
+      <BackgroundBeams className='-z-10'/>
     </div>
   )
 }

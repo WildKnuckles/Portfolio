@@ -23,7 +23,7 @@ const About = () => {
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
       whileInView={{ opacity: 1, scale: 1.2 }}
-      transition={{ duration: 0.8 }}
+      transition={{ duration: 2 }}
       className="flex p-4 justify-center"
       style={{
         clipPath:
