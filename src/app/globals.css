@@ -3,6 +3,17 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@layer utilities {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section {
+    @apply flex flex-col items-center justify-center min-h-screen antialiased;
+  }
+}
+
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
