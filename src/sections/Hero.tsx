@@ -4,6 +4,13 @@ import { IconBrandLinkedin, IconBrandGithub, IconBrandInstagram, IconBrandGoogle
 import Link from 'next/link';
 import { motion } from "framer-motion";
 import { IconArrowDown } from "@tabler/icons-react";
+import { Badge } from "@/components/ui/badge"
+import {
+    Avatar,
+    AvatarFallback,
+    AvatarImage,
+  } from "@/components/ui/avatar"
+import avatar from '@/assets/avatar.jpg'
 
 const Hero = () => {
   // Add client-side only rendering
@@ -19,7 +26,13 @@ const Hero = () => {
   }
 
   return (
-    <div className="section flex flex-col items-center">
+    <div className="flex flex-col items-center justify-center min-h-screen antialiased">
+        <Avatar>
+      <AvatarImage src={avatar.src} alt="@shadcn" />
+      <AvatarFallback>CN</AvatarFallback>
+    </Avatar>
+    <br />
+      <Badge variant="outline">Welcome</Badge>
       <div className="max-w-2xl mx-auto p-4">
         <motion.h1 
           initial={{ opacity: 0, y: -100 }}
@@ -29,12 +42,13 @@ const Hero = () => {
           Jonatão Cardoso
         </motion.h1>
 
+        
         <motion.p 
           initial={{ opacity: 0, x: -100 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
           className="text-muted-foreground max-w-lg mx-auto my-2 text-sm text-center relative z-10">
-          I am a passionate Frontend Developer with a keen eye for creating intuitive, high-performance, and visually striking user interfaces. With expertise in Next.js, React, and Tailwind CSS, I specialize in building seamless web applications that prioritize user experience and efficiency.
+          I build stunning, dynamic and visually captivating digital interfaces, enriched with fluid animations and engaging interactions. I use modern and innovative technologies to develop intuitive experiences, always with a focus on UX, ensuring the creation of efficient, highly scalable and truly user-friendly applications.
         </motion.p>
       </div>
 
@@ -57,7 +71,9 @@ const Hero = () => {
         animate={{ y: -5 }}
         transition={{ repeat: Infinity, repeatType: "reverse", duration: 1.2 }}
       >
+        <Link href="#about">
         <IconArrowDown size={20} />
+        </Link>
       </motion.button>
     </div>
   )

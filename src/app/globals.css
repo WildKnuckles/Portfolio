@@ -9,7 +9,7 @@
   }
 
   .section {
-    @apply flex flex-col items-center justify-center min-h-screen antialiased;
+    @apply flex flex-col items-center justify-center py-24  antialiased;
   }
 }
 
