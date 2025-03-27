@@ -13,6 +13,7 @@ const Experience = () => {
                   className="relative z-10 text-lg md:text-7xl bg-clip-text text-transparent bg-gradient-to-b from-foreground to-zinc-500 text-center font-sans font-bold">
                   Professional Experience
                 </motion.h1>
+                {/* Timeline */}
     </div>
   )
 }
