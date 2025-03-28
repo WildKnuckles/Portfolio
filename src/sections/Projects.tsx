@@ -1,23 +1,24 @@
 import React from 'react'
+import ParticlesComponent from '@/components/ui/particles'; 
 import { Badge } from "@/components/ui/badge"
 import { motion } from 'framer-motion';
-import { TimelineDemo } from '@/components/timeline-section';
 
-const Experience = () => {
+const Projects = () => {
   return (
-    <div className='section bg-accent/10 rounded-2xl' id="experience">
-        <Badge variant="outline">Dive Into My Works</Badge>
+    <div className='relative'>
+    <ParticlesComponent id="sectionParticles"/>
+      <div className="section">
+                <Badge variant="outline">What I Did?</Badge>
                 <motion.h1 
                   initial={{ opacity: 0, y: -100 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5 }}
                   className="relative z-10 text-lg md:text-7xl bg-clip-text text-transparent bg-gradient-to-b from-foreground to-zinc-500 text-center font-sans font-bold">
-                  Professional Experience
+                  Projects Showcase
                 </motion.h1>
-                {/* Timeline */}
-                <TimelineDemo/>
+      </div>
     </div>
   )
 }
 
-export default Experience
+export default Projects
