@@ -6,7 +6,7 @@ import { ThreeDCardDemo } from '@/components/cards';
 
 const Projects = () => {
   return (
-    <div className='relative'>
+    <div className='relative' id='projects'>
     <ParticlesComponent id="sectionParticles"/>
       <div className="section">
                 <Badge variant="outline">What I Did?</Badge>
