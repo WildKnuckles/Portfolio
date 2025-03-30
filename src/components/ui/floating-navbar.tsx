@@ -1,5 +1,5 @@
 "use client";
-import React, { useState} from "react";
+import React, { useState, useRef } from "react";
 import {
   motion,
   AnimatePresence,
@@ -7,7 +7,7 @@ import {
   useMotionValueEvent,
 } from "framer-motion";
 import { cn } from "@/lib/utils";
-import Link from "next/link";
+import { Link } from "react-scroll";
 import { JSX } from "react/jsx-runtime";
 import { ModeToggle } from "../mode-toggle";
 
@@ -24,14 +24,12 @@ export const FloatingNav = ({
 }) => {
   const { scrollY } = useScroll();
   const [visible, setVisible] = useState(true);
-  let timeout: NodeJS.Timeout;
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useMotionValueEvent(scrollY, "change", () => {
     setVisible(false);
-    clearTimeout(timeout);
-    timeout = setTimeout(() => {
-      setVisible(true);
-    }, 300);
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    timeoutRef.current = setTimeout(() => setVisible(true), 300);
   });
 
   return (
@@ -48,14 +46,16 @@ export const FloatingNav = ({
         {navItems.map((navItem, idx) => (
           <Link
             key={`link-${idx}`}
-            href={navItem.link}
-            className="relative dark:text-neutral-50 flex items-center space-x-1 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500"
+            to={navItem.link}
+            smooth={true}
+            duration={1000}
+            className="relative dark:text-neutral-50 flex items-center space-x-1 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500 cursor-pointer"
           >
             <span className="block sm:hidden">{navItem.icon}</span>
             <span className="hidden sm:block text-sm">{navItem.name}</span>
           </Link>
         ))}
-        <ModeToggle/>
+        <ModeToggle />
       </motion.div>
     </AnimatePresence>
   );

@@ -1,7 +1,7 @@
 "use client"
 import React, { useState, useEffect } from 'react'
 import { IconBrandLinkedin, IconBrandGithub, IconBrandInstagram, IconBrandGoogle} from '@tabler/icons-react';
-import Link from 'next/link';
+import { Link } from 'react-scroll';
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import { motion } from "framer-motion";
 import { IconArrowDown } from "@tabler/icons-react";
@@ -27,7 +27,7 @@ const Hero = () => {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen antialiased">
+    <div className="flex flex-col items-center justify-center min-h-screen antialiased" id='hero'>
         <Avatar className='mb-2'>
       <AvatarImage src={avatar.src} alt="@shadcn" />
       <AvatarFallback>CN</AvatarFallback>
@@ -57,12 +57,12 @@ const Hero = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         className="flex gap-4 mt-4">
-        <Link href="https://www.linkedin.com/in/jonatão-cardoso-72853b358" target="_blank" rel="noopener noreferrer"><IconBrandLinkedin/></Link>
-        <Link href="https://www.github.com/WildKnuckles" target="_blank" rel="noopener noreferrer"><IconBrandGithub/></Link>
-        <Link href="mailto:jonataosacapia@gmail.com"><IconBrandGoogle/></Link>
-        <Link href="https://www.instagram.com/johnnycardoso_wk" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.linkedin.com/in/jonatão-cardoso-72853b358" target="_blank" rel="noopener noreferrer"><IconBrandLinkedin/></a>
+        <a href="https://www.github.com/WildKnuckles" target="_blank" rel="noopener noreferrer"><IconBrandGithub/></a>
+        <a href="mailto:jonataosacapia@gmail.com"><IconBrandGoogle/></a>
+        <a href="https://www.instagram.com/johnnycardoso_wk" target="_blank" rel="noopener noreferrer">
           <IconBrandInstagram />
-        </Link>
+        </a>
       </motion.div>
 
       <motion.button
@@ -71,7 +71,7 @@ const Hero = () => {
         animate={{ y: -5 }}
         transition={{ repeat: Infinity, repeatType: "reverse", duration: 1.2 }}
       >
-        <Link href="#about">
+        <Link to="about" smooth={true} duration={500}>
         <IconArrowDown size={20} />
         </Link>
       </motion.button>

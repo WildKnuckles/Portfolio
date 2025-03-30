@@ -5,28 +5,29 @@ import React from "react";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import Link from "next/link";
 import { IconBrandGithub } from "@tabler/icons-react";
+import Project1 from '@/assets/project1.png'
+import Project2 from '@/assets/project2.png'
+import Project3 from '@/assets/project3.png'
+
 
 const cards = [
   {
-    title: "Make things float in air",
-    description: "Hover over this card to unleash the power of CSS perspective",
-    image:
-      "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    link: "https://twitter.com/mannupaaji",
+    title: "My Portfolio",
+    description: "Awesome animations with framer motion and three.js",
+    image: Project1,
+    link: "https://portfolio-jsc.vercel.app/",
   },
   {
-    title: "Experience depth effects",
-    description: "3D hover effects bring your UI to life",
-    image:
-      "https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    link: "https://twitter.com/mannupaaji",
+    title: "Healthcare App",
+    description: "A health care app for patients and doctors",
+    image: Project2,
+    link: "https://healthcare-three-gamma.vercel.app/",
   },
   {
-    title: "Hover animations made easy",
-    description: "Implement smooth 3D animations effortlessly",
-    image:
-      "https://images.unsplash.com/photo-1619410283995-43d9134e7656?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    link: "https://twitter.com/mannupaaji",
+    title: "Educational App",
+    description: "A educational app for students and teachers",
+    image: Project3,
+    link: "https://cniilp-ao.vercel.app/",
   },
 ];
 
@@ -47,7 +48,7 @@ export function ThreeDCardDemo() {
                 src={card.image}
                 height="1000"
                 width="1000"
-                className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
+                className="h-60 w-full object-contain rounded-lg group-hover/card:shadow-xl"
                 alt="thumbnail"
               />
             </CardItem>
