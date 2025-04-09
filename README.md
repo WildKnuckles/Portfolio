@@ -2,42 +2,34 @@
 erDiagram
 
     EMPRESA ||--o{ LOJA : possui
-    EMPRESA ||--o{ UTILIZADOR : "tem usuários"
+    EMPRESA ||--o{ UTILIZADOR : tem
 
-    LOJA ||--o{ PRODUTO : contém
+    LOJA ||--o{ PRODUTO : contem
     LOJA ||--o{ VENDA : realiza
     LOJA ||--o{ STOCK : armazena
-    LOJA ||--o{ SESSAO_CAIXA : controla
+    LOJA ||--o{ CAIXA_SESSAO : controla
 
-    UTILIZADOR ||--o{ SESSAO_CAIXA : "abre/fecha"
-    UTILIZADOR ||--o{ VENDA : realiza
+    UTILIZADOR ||--o{ CAIXA_SESSAO : opera
+    UTILIZADOR ||--o{ VENDA : processa
     UTILIZADOR }|--|{ LOJA : trabalha_em
 
     CATEGORIA ||--o{ PRODUTO : classifica
-    PRODUTO ||--o{ STOCK : "gera"
+    PRODUTO ||--o{ STOCK : gera
     PRODUTO ||--o{ VENDA_ITEM : vendido_em
     PRODUTO ||--o{ COMPRA_ITEM : comprado_em
 
     CLIENTE ||--o{ VENDA : compra
-    CLIENTE ||--o{ FACTURA : fatura
+    CLIENTE ||--o{ FACTURA : recebe
 
     FORNECEDOR ||--o{ COMPRA : fornece
 
     COMPRA ||--o{ COMPRA_ITEM : possui
     VENDA ||--o{ VENDA_ITEM : possui
     VENDA ||--o{ FACTURA : gera
-    PRODUTO ||--o{ DESCONTO : "possui descontos"
-    PRODUTO ||--o{ IMPOSTO : "tem impostos"
+    PRODUTO ||--o{ DESCONTO : tem
+    PRODUTO ||--o{ IMPOSTO : aplica
 
-    SESSAO_CAIXA ||--o{ MOVIMENTO_CAIXA : registra
-
-    UTILIZADOR {
-        string id
-        string nome
-        string email
-        string senha
-        enum role -- "admin, gerente, caixa"
-    }
+    CAIXA_SESSAO ||--o{ MOV_CAIXA : registra
 
     EMPRESA {
         string id
@@ -52,11 +44,12 @@ erDiagram
         string localizacao
     }
 
-    PRODUTO {
+    UTILIZADOR {
         string id
         string nome
-        string codigo_barra
-        float preco_base
+        string email
+        string senha
+        string role
     }
 
     CATEGORIA {
@@ -64,12 +57,19 @@ erDiagram
         string nome
     }
 
+    PRODUTO {
+        string id
+        string nome
+        string cod_barra
+        float preco_base
+    }
+
     STOCK {
         string id
         string produto_id
         string loja_id
         int quantidade
-        int limite_alerta
+        int alerta_limite
         date validade
     }
 
@@ -136,7 +136,7 @@ erDiagram
         float percentual
     }
 
-    SESSAO_CAIXA {
+    CAIXA_SESSAO {
         string id
         string loja_id
         string utilizador_id
@@ -144,14 +144,15 @@ erDiagram
         date fechamento
     }
 
-    MOVIMENTO_CAIXA {
+    MOV_CAIXA {
         string id
         string sessao_id
-        enum tipo -- "entrada | saida"
+        string tipo
         float valor
         string motivo
         date data
     }
+
 ```
 
 ```mermaid
