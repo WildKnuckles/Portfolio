@@ -73,9 +73,10 @@ erDiagram
         int id PK
         int loja_id FK
     }
+```
 
-
-
+```mermaid
+    erDiagram
     USUARIO ||--o{ PERFIL : "possui"
     USUARIO ||--o{ EMPRESA : "é proprietário"
     EMPRESA ||--o{ LOJA : "contém"
