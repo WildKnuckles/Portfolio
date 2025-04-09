@@ -48,12 +48,6 @@ erDiagram
         int quantidade
     }
     
-    
-    CAIXA ||--o{ MOVIMENTO_CAIXA : makes
-    CAIXA {
-        int id PK
-        int loja_id FK
-    }
     VENDA ||--|{ ITEM_FACTURA : contains
     VENDA ||--|| FACTURA : generates
     VENDA {
@@ -66,6 +60,12 @@ erDiagram
     FACTURA {
         int id PK
         string numero
+    }
+    
+    CAIXA ||--o{ VENDA : has
+    CAIXA {
+        int id PK
+        int loja_id FK
     }
 ```
 
