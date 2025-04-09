@@ -1,71 +1,156 @@
 ```mermaid
 erDiagram
-    USUARIO ||--o{ PERFIL : has
-    USUARIO {
-        int id PK
+
+    EMPRESA ||--o{ LOJA : possui
+    EMPRESA ||--o{ UTILIZADOR : "tem usuários"
+
+    LOJA ||--o{ PRODUTO : contém
+    LOJA ||--o{ VENDA : realiza
+    LOJA ||--o{ STOCK : armazena
+    LOJA ||--o{ SESSAO_CAIXA : controla
+
+    UTILIZADOR ||--o{ SESSAO_CAIXA : "abre/fecha"
+    UTILIZADOR ||--o{ VENDA : realiza
+    UTILIZADOR }|--|{ LOJA : trabalha_em
+
+    CATEGORIA ||--o{ PRODUTO : classifica
+    PRODUTO ||--o{ STOCK : "gera"
+    PRODUTO ||--o{ VENDA_ITEM : vendido_em
+    PRODUTO ||--o{ COMPRA_ITEM : comprado_em
+
+    CLIENTE ||--o{ VENDA : compra
+    CLIENTE ||--o{ FACTURA : fatura
+
+    FORNECEDOR ||--o{ COMPRA : fornece
+
+    COMPRA ||--o{ COMPRA_ITEM : possui
+    VENDA ||--o{ VENDA_ITEM : possui
+    VENDA ||--o{ FACTURA : gera
+    PRODUTO ||--o{ DESCONTO : "possui descontos"
+    PRODUTO ||--o{ IMPOSTO : "tem impostos"
+
+    SESSAO_CAIXA ||--o{ MOVIMENTO_CAIXA : registra
+
+    UTILIZADOR {
+        string id
         string nome
         string email
         string senha
-        string tipo
-        boolean ativo
+        enum role -- "admin, gerente, caixa"
     }
-    
-    EMPRESA ||--o{ LOJA : has
+
     EMPRESA {
-        int id PK
+        string id
         string nome
         string nif
-        int proprietario_id FK
+        string endereco
     }
-    
-    LOJA ||--o{ CAIXA : has
+
     LOJA {
-        int id PK
+        string id
         string nome
-        int empresa_id FK
-        int gerente_id FK
+        string localizacao
     }
-    
-    CATEGORIA ||--o{ PRODUTO : has
-    CATEGORIA {
-        int id PK
-        string nome
-    }
-    
-    PRODUTO ||--o{ STOCK : has
+
     PRODUTO {
-        int id PK
+        string id
         string nome
-        string codigo_barras
-        int categoria_id FK
+        string codigo_barra
+        float preco_base
     }
-    
-    STOCK ||--o{ ALERTA_STOCK : has
+
+    CATEGORIA {
+        string id
+        string nome
+    }
+
     STOCK {
-        int id PK
-        int produto_id FK
-        int loja_id FK
+        string id
+        string produto_id
+        string loja_id
         int quantidade
+        int limite_alerta
+        date validade
     }
-    
-    VENDA ||--|{ ITEM_FACTURA : contains
-    VENDA ||--|| FACTURA : generates
+
+    FORNECEDOR {
+        string id
+        string nome
+        string contacto
+    }
+
+    COMPRA {
+        string id
+        string fornecedor_id
+        date data
+        float total
+    }
+
+    COMPRA_ITEM {
+        string id
+        string compra_id
+        string produto_id
+        int quantidade
+        float preco_unitario
+    }
+
+    CLIENTE {
+        string id
+        string nome
+        string contacto
+    }
+
     VENDA {
-        int id PK
-        int cliente_id FK
-        int loja_id FK
+        string id
+        string loja_id
+        string cliente_id
+        string utilizador_id
+        date data
+        float total
     }
-    
-    FACTURA ||--o{ PAGAMENTO : has
+
+    VENDA_ITEM {
+        string id
+        string venda_id
+        string produto_id
+        int quantidade
+        float preco_unitario
+    }
+
     FACTURA {
-        int id PK
-        string numero
+        string id
+        string venda_id
+        boolean anulada
+        date data_emissao
     }
-    
-    CAIXA ||--o{ VENDA : has
-    CAIXA {
-        int id PK
-        int loja_id FK
+
+    IMPOSTO {
+        string id
+        string nome
+        float percentual
+    }
+
+    DESCONTO {
+        string id
+        string nome
+        float percentual
+    }
+
+    SESSAO_CAIXA {
+        string id
+        string loja_id
+        string utilizador_id
+        date abertura
+        date fechamento
+    }
+
+    MOVIMENTO_CAIXA {
+        string id
+        string sessao_id
+        enum tipo -- "entrada | saida"
+        float valor
+        string motivo
+        date data
     }
 ```
 
