@@ -73,4 +73,16 @@ erDiagram
         int id PK
         int loja_id FK
     }
+
+
+
+    USUARIO ||--o{ PERFIL : "possui"
+    USUARIO ||--o{ EMPRESA : "é proprietário"
+    EMPRESA ||--o{ LOJA : "contém"
+    LOJA ||--o{ CAIXA : "tem"
+    CAIXA ||--o{ FACTURA : "realiza"
+    FACTURA ||--|{ ITEM_FACTURA : "contém"
+    LOJA ||--o{ STOCK : "estoque"
+    STOCK }|--|| PRODUTO : "referencia"
+    PRODUTO }|--|| CATEGORIA : "pertence a"
 ```
