@@ -6,7 +6,7 @@ import Tech from '@/components/technologies';
 const Skills = () => {
   return (
     <div className='rounded-2xl' id="skills">
-      <div className='section'>
+      <div className=''>
         <LampContainer>
         <Badge variant="outline">Find Out What My Stack Is</Badge>
       <motion.h1

@@ -8,7 +8,7 @@ import Projects from '@/sections/Projects';
 export default function Home() {
   return (
     <>
-    <div className="container-custom">
+    <div className="">
       <Hero />
       <About />
       <Experience />
