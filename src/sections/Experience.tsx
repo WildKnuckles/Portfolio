@@ -5,7 +5,7 @@ import { TimelineDemo } from '@/components/timeline-section';
 
 const Experience = () => {
   return (
-    <div className='section bg-accent/10 rounded-2xl' id="experience">
+    <div className='section bg-red-500 rounded-2xl' id="experience">
         <Badge variant="outline">Dive Into My Works</Badge>
                 <motion.h1 
                   initial={{ opacity: 0, y: -100 }}
